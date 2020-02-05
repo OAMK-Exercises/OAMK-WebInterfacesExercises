@@ -2,6 +2,24 @@
 
 
 /**
+ * get Hello World message
+ *
+ * returns String
+ **/
+exports.getHelloWorld = function() {
+  return new Promise(function(resolve, reject) {
+    var examples = {};
+    examples['application/json'] = "Hello world";
+    if (Object.keys(examples).length > 0) {
+      resolve(examples[Object.keys(examples)[0]]);
+    } else {
+      resolve();
+    }
+  });
+}
+
+
+/**
  * get current weather of a city
  *
  * citycode String String.ID of the city to get

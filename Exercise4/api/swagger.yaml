@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.0
 info:
   title: Weather API
   description: Weather Example API
@@ -12,6 +12,20 @@ servers:
 - url: https://virtserver.swaggerhub.com/Nacchofer31/SwaggerProjectExercise/1.0.0
   description: SwaggerHub API Auto Mocking
 paths:
+  /test:
+    get:
+      summary: get Hello World message
+      operationId: getHelloWorld
+      responses:
+        "200":
+          description: Response to test
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Hello world
+                x-content-type: text/plain
+      x-swagger-router-controller: Default
   /weather:
     get:
       summary: get current weather in all cities
